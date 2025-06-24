@@ -4,13 +4,13 @@ ProFound is a collection of vision foundation models, pre-trained on multi-param
 We aim to open-source all code for pre-training, fine-tuning, and validating ProFound models. This is an ongoing effort, so please check back later for updates.
 
 
-# Downstream tasks
+## Downstream tasks
 Profound can be fine-tuned for a wide range of prostate cancer imaging tasks. Switch to the `demo` branch for examples:
 ```batch
 git checkout demo
 ```
 
-## Cancer classification
+### Cancer classification
 - Download weights: [fine-tuned weights](https://your-download-link-here.com)
 - Run:
   ```bash
@@ -20,7 +20,7 @@ git checkout demo
   ![Cancer segmentation example](./assets/cancer_segmentation_example.png)
 
 
-## Gland segmentation
+### Gland segmentation
 - Download weights: [fine-tuned weights](https://your-download-link-here.com)
 - Run:
   ```bash
@@ -30,8 +30,9 @@ git checkout demo
   ![Gland segmentation example](./assets/gland_segmentation_example.png)
 
 
-# Pre-trained model weights
+## Pre-trained models
 
-## Available models
+### Available models
 - **ProFound-alpha**: [Download pre-trained weights](https://your-download-link-here.com)
   *Pre-trained on approximately 5,000 multi-parametric prostate MRI studies.*
+  
