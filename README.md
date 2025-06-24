@@ -1,7 +1,7 @@
 # ProFound
 ProFound is a collection of vision foundation models, pre-trained on multi-parametric 3D magnetic resonance images from thousands of prostate cancer patients. 
 
-We aim to open-source ode for pre-training, fine-tuning, and evaluation, together with weights of pre-trained and fine-tuned models. This is an ongoing effort, so please check back later for updates.
+We aim to open-source code for pre-training, fine-tuning, and evaluation, together with weights of pre-trained and fine-tuned models. This is an ongoing effort, so please check back later for updates.
 
 
 ## Downstream tasks
