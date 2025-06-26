@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0"/>
   <img src="https://img.shields.io/badge/Python-3.11-3776AB.svg?style=flat&logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white" alt="PyTorch"/>
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0"/>
 </p>
 
 # ProFound: Vision Foundation Models for Prostate Multiparametric MR Images
@@ -15,7 +15,7 @@ We aim to open-source code for pre-training, fine-tuning, and evaluation, togeth
 
 
 ## Downstream tasks
-Profound can be fine-tuned for a wide range of prostate cancer imaging tasks. Switch to the `demo` branch for examples:
+Profound can be fine-tuned for a wide range of prostate imaging tasks. Switch to the `demo` branch for examples:
 ```batch
 git checkout demo
 ```
@@ -39,10 +39,12 @@ git checkout demo
 - Example output:  
   ![Gland segmentation example](./assets/gland_segmentation_example.png)
 
+*More tasks are on the way...*
 
 ## Pre-trained models
 
 ### Available models
 - **ProFound-alpha**: [Download pre-trained weights](https://your-download-link-here.com)
-  *Pre-trained on approximately 5,000 multi-parametric prostate MRI studies.*
-  
+  > Pre-trained on approximately 5,000 international, cross-institute, multiparametric prostate MRI studies, each of which includes T2w, ADC and high-b DWI volumes
+
+*More models coming soon!*
