@@ -1,7 +1,17 @@
-# ProFound
-ProFound is a collection of vision foundation models, pre-trained on multi-parametric 3D magnetic resonance images from thousands of prostate cancer patients. 
+<p align="center">
+  <img src="./assets/profound_logo.png" alt="ProFound Logo" width="400"/>
+</p>
 
-We aim to open-source code for pre-training, fine-tuning, and evaluation, together with weights of pre-trained and fine-tuned models. This is an ongoing effort, so please check back later for updates.
+<p align="center">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0"/>
+  <img src="https://img.shields.io/badge/Python-3.11-3776AB.svg?style=flat&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white" alt="PyTorch"/>
+</p>
+
+# ProFound: Vision Foundation Models for Prostate Multiparametric MR Images
+ProFound is a collection of vision foundation models, pre-trained on multiparametric 3D magnetic resonance images from thousands of prostate cancer patients. 
+
+We aim to open-source code for pre-training, fine-tuning, and evaluation, together with weights of pre-trained and fine-tuned ProFound models. This is an ongoing effort, so please check back later for updates.
 
 
 ## Downstream tasks
