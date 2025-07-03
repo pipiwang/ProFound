@@ -22,32 +22,33 @@ Profound can be fine-tuned for a wide range of prostate imaging tasks. Switch to
 git checkout demo
 ```
 
+- Download weights and example images [here](https://liveuclac-my.sharepoint.com/:f:/g/personal/rmapyw0_ucl_ac_uk/ElyR-Bc7QqVAjhShIptm9K8BJsSb6QKKqJn0XolSEj0vgQ?e=MsrMCf).
+- Save them to the repository root directory and run the following tasks.
+
 ### Radiological cancer classification
-- **Download weights**: [fine-tuned weights](https://your-download-link-here.com)
 - **Run**:
   ```bash
-  python ./demo/classification_pirads.py
+  python demo_run_classification.py
   ```
-- **Example output:**  
-  ![Cancer segmentation example](./assets/cancer_segmentation_example.png)
+<!-- - **Example output:**  
+  ![Cancer segmentation example](./assets/cancer_segmentation_example.png) -->
 
-### Anatomy segmentation
-- **Download weights**: [fine-tuned weights](https://your-download-link-here.com)
+### Lesion segmentation
 - **Run**:
   ```bash
-  python ./demo/segmentation_anatomy.py
+  python demo_run_segmentation.py
   ```
-- **Example output:**  
-  ![Gland segmentation example](./assets/anatomy_segmentation_example.png)
+<!-- - **Example output:**  
+  ![Gland segmentation example](./assets/anatomy_segmentation_example.png) -->
 
-### Cancer localisation
+<!-- ### Cancer localisation
 - **Download weights**: [fine-tuned weights](https://your-download-link-here.com)
 - **Run**:
   ```bash
   python ./demo/localisation_pirads3.py
   ```
 - **Example output**:  
-  ![Gland segmentation example](./assets/localisation_pirads3_example.png)
+  ![Gland segmentation example](./assets/localisation_pirads3_example.png) -->
 
 *More tasks are on the way...*
 
