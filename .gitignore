@@ -1,0 +1,10 @@
+*.DS_Store
+ckpt/
+dump/
+MinkowskiEngine/
+output_*/
+resulstnpy/
+surface-distance/
+*.pyc
+__pycache__/
+visualize_results/
