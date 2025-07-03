@@ -28,7 +28,7 @@ git checkout demo
 ### Radiological cancer classification
 - **Run**:
   ```bash
-  sh demo_run_classification.py
+  sh demo_run_classification.sh
   ```
 <!-- - **Example output:**  
   ![Cancer segmentation example](./assets/cancer_segmentation_example.png) -->
@@ -36,7 +36,7 @@ git checkout demo
 ### Lesion segmentation
 - **Run**:
   ```bash
-  sh demo_run_segmentation.py
+  sh demo_run_segmentation.sh
   ```
 <!-- - **Example output:**  
   ![Gland segmentation example](./assets/anatomy_segmentation_example.png) -->
