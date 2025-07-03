@@ -43,7 +43,8 @@ class RiskSet(Dataset):
         self.root = args.root
         self._set_dataset_stat()
         self.transforms = transforms  # self.get_transforms()
-        self.set_sampler()
+        if not args.demo:
+            self.set_sampler()
 
     def set_sampler(self):
         class_counts = self.img_dict["pirads"].value_counts().sort_index().values
@@ -257,9 +258,18 @@ def build_Risk_loader(args):
     train_transforms, val_transforms, test_transforms = get_transforms(args)
     
     if args.demo:
-        train_set = RiskSet(args, "demo/data/risk/train.csv", 'train', train_transforms)
-        val_set = RiskSet(args, "demo/data/risk/val.csv", 'val', val_transforms)
         test_set = RiskSet(args, "demo/data/risk/test.csv", 'test', test_transforms)
+        test_loader = DataLoader(
+            test_set,
+            batch_size=args.batch_size,
+            shuffle=False,
+            pin_memory=True,
+            num_workers=14,
+            drop_last=False,
+        )
+        args.in_channels = 3
+        args.num_classes = 4
+        return test_loader
     else:
         if args.data20:
             train_set = RiskSet(args, "spilt/risk/train_16.csv", 'train', train_transforms)
@@ -268,36 +278,36 @@ def build_Risk_loader(args):
         val_set = RiskSet(args, "spilt/risk/val.csv", 'val', val_transforms)
         test_set = RiskSet(args, "spilt/risk/test.csv", 'test', test_transforms)
 
-    sampler = WeightedRandomSampler(
-        weights=train_set.sampler_weight, num_samples=len(train_set), replacement=True
-    )
-    train_loader = DataLoader(
-        train_set,
-        batch_size=args.batch_size,
-        sampler=sampler,
-        num_workers=args.num_workers,
-        drop_last=False,
-        pin_memory=True,
-    )
-    val_loader = DataLoader(
-        val_set,
-        batch_size=args.batch_size,
-        shuffle=False,
-        pin_memory=True,
-        num_workers=14,
-        drop_last=False,
-    )
-    test_loader = DataLoader(
-        test_set,
-        batch_size=args.batch_size,
-        shuffle=False,
-        pin_memory=True,
-        num_workers=14,
-        drop_last=False,
-    )
-    args.in_channels = 3
-    args.num_classes = 4
-    return train_loader, val_loader, test_loader
+        sampler = WeightedRandomSampler(
+            weights=train_set.sampler_weight, num_samples=len(train_set), replacement=True
+        )
+        train_loader = DataLoader(
+            train_set,
+            batch_size=args.batch_size,
+            sampler=sampler,
+            num_workers=args.num_workers,
+            drop_last=False,
+            pin_memory=True,
+        )
+        val_loader = DataLoader(
+            val_set,
+            batch_size=args.batch_size,
+            shuffle=False,
+            pin_memory=True,
+            num_workers=14,
+            drop_last=False,
+        )
+        test_loader = DataLoader(
+            test_set,
+            batch_size=args.batch_size,
+            shuffle=False,
+            pin_memory=True,
+            num_workers=14,
+            drop_last=False,
+        )
+        args.in_channels = 3
+        args.num_classes = 4
+        return train_loader, val_loader, test_loader
 
 
 def build_Screening_loader(args):
