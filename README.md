@@ -23,7 +23,7 @@ git checkout demo
 ```
 
 - Download weights and example images [here](https://liveuclac-my.sharepoint.com/:f:/g/personal/rmapyw0_ucl_ac_uk/ElyR-Bc7QqVAjhShIptm9K8BJsSb6QKKqJn0XolSEj0vgQ?e=MsrMCf).
-- Save them to the repository root directory and run the following tasks.
+- Decompress (if needed) and place the downloaded folders, `checkpoints` and `demo`, at the repository root directory and run the following tasks.
 
 ### Radiological cancer classification
 - **Run**:
