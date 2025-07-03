@@ -11,7 +11,7 @@
 
 
 # ProFound: Vision Foundation Models for Prostate Multiparametric MR Images
-ProFound is a suite of vision foundation models, pre-trained on multiparametric 3D magnetic resonance (MR) images from thousands of prostate cancer patients. 
+ProFound is a suite of vision foundation models, pre-trained on multiparametric 3D magnetic resonance (MR) images from large collections of prostate cancer patients. 
 
 We aim to open-source all code for pre-training, fine-tuning, and evaluation, together with weights of pre-trained and fine-tuned ProFound models. This is an ongoing effort, so please check back later for updates.
 
