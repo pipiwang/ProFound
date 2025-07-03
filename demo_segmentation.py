@@ -51,7 +51,7 @@ def get_args_parser():
     )
     parser.add_argument("--epochs", default=400, type=int)
     parser.add_argument(
-        "--root", default="/SAN/medic/foundation/downstream_data", type=str
+        "--root", default="./", type=str
     )
     parser.add_argument("--crop_spatial_size", default=(64, 256, 256), type=tuple_type)
 
@@ -156,11 +156,12 @@ def main(args):
     cudnn.benchmark = True
 
     if args.dataset == "UCL":
-        _, _, data_loader_test = build_UCL_loader(args)
+        data_loader_test = build_UCL_loader(args)
         args.sliding_window = False
     
     else:
         raise NotImplementedError(f"unknown schedule sampler: {args.dataset}")
+    print(f"Loaded dataset: {args.dataset}, test set size: {len(data_loader_test)}")
 
     if args.model == "profound_conv":
         convnext = convnextv2_tiny(in_chans=3)
@@ -186,9 +187,9 @@ def main(args):
     args.output_dir = os.path.join(args.output_dir, args.dataset)
     os.makedirs(args.output_dir, exist_ok=True)
 
-    # define the model
-    filepath_best = os.path.join(args.ckpt_dir, "best.pth.tar")
-    model.load_state_dict(torch.load(filepath_best)["model"])
+    model.load_state_dict(torch.load(args.ckpt_dir)["model"])
+    print(f"Loaded model: {args.ckpt_dir}")
+
     dice_list = []
     model.eval()
     with torch.no_grad():

@@ -1,6 +1,5 @@
 DATASET='risk'
-
-CKPT=ckpt/classification.pth
+CKPT=checkpoint/classification.pth.tar
 OURPUTDIR=demo/demo_output
 python -u demo_classfication.py \
     --batch_size 2 \

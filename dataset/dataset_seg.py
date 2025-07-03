@@ -275,9 +275,19 @@ def get_transforms(args):
 def build_UCL_loader(args):
     train_transforms, val_transforms, test_transforms = get_transforms(args)
     if args.demo:
-        train_set = UCLSet(args, "demo/data/UCL/train.csv", 'train', train_transforms)
-        val_set = UCLSet(args, "demo/data/UCL/val.csv", 'val', val_transforms)
         test_set = UCLSet(args, "demo/data/UCL/test.csv", 'test', test_transforms)
+        test_loader = DataLoader(
+            test_set,
+            batch_size=1,
+            shuffle=False,
+            pin_memory=True,
+            num_workers=14,
+            drop_last=False,
+        )
+        args.in_channels = 3
+        args.out_channels = 1
+        args.num_classes = 1
+        return test_loader
     else:
         if args.data20:
             train_set = UCLSet(args, "spilt/UCL/train_16.csv", 'train', train_transforms)
@@ -285,34 +295,34 @@ def build_UCL_loader(args):
             train_set = UCLSet(args, "spilt/UCL/train.csv", 'train', train_transforms)
         val_set = UCLSet(args, "spilt/UCL/val.csv", 'val', val_transforms)
         test_set = UCLSet(args, "spilt/UCL/test.csv", 'test', test_transforms)
-    train_loader = DataLoader(
-        train_set,
-        batch_size=args.batch_size,
-        shuffle=True,
-        pin_memory=True,
-        num_workers=14,
-        drop_last=True,
-    )
-    val_loader = DataLoader(
-        val_set,
-        batch_size=args.batch_size,
-        shuffle=False,
-        pin_memory=True,
-        num_workers=14,
-        drop_last=False,
-    )
-    test_loader = DataLoader(
-        test_set,
-        batch_size=1,
-        shuffle=False,
-        pin_memory=True,
-        num_workers=14,
-        drop_last=False,
-    )
-    args.in_channels = 3
-    args.out_channels = 1
-    args.num_classes = 1
-    return train_loader, val_loader, test_loader
+        train_loader = DataLoader(
+            train_set,
+            batch_size=args.batch_size,
+            shuffle=True,
+            pin_memory=True,
+            num_workers=14,
+            drop_last=True,
+        )
+        val_loader = DataLoader(
+            val_set,
+            batch_size=args.batch_size,
+            shuffle=False,
+            pin_memory=True,
+            num_workers=14,
+            drop_last=False,
+        )
+        test_loader = DataLoader(
+            test_set,
+            batch_size=1,
+            shuffle=False,
+            pin_memory=True,
+            num_workers=14,
+            drop_last=False,
+        )
+        args.in_channels = 3
+        args.out_channels = 1
+        args.num_classes = 1
+        return train_loader, val_loader, test_loader
 
 
 def build_Promis_loader(args):

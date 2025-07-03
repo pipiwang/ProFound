@@ -38,7 +38,7 @@ def get_args_parser():
     )
     parser.add_argument("--epochs", default=400, type=int)
     parser.add_argument(
-        "--root", default="/SAN/medic/foundation/downstream_data", type=str
+        "--root", default="./", type=str
     )
     parser.add_argument("--crop_spatial_size", default=(64, 256, 256), type=tuple_type)
 
@@ -145,7 +145,7 @@ def main(args):
     
 
     if args.dataset == "risk":
-        data_loader_train, data_loader_val, data_loader_test = build_Risk_loader(args)
+        data_loader_test = build_Risk_loader(args)
     # elif args.dataset == "screening":
     #     data_loader_train, data_loader_val, data_loader_test = build_Screening_loader(
     #         args
@@ -156,6 +156,7 @@ def main(args):
     #     data_loader_train, data_loader_val, data_loader_test = build_Promis3_hist_loader(args)
     else:
         raise NotImplementedError(f"unknown schedule sampler: {args.dataset}")
+    print(f"Loaded dataset: {args.dataset}, test set size: {len(data_loader_test.dataset)}")
     
     if args.model == "profound_conv":
         convnext = convnextv2_tiny(in_chans=3)
@@ -166,9 +167,8 @@ def main(args):
     args.output_dir = os.path.join(args.output_dir, args.dataset)
     os.makedirs(args.output_dir, exist_ok=True)
 
-    # define the model
-    filepath_best = os.path.join(args.ckpt_dir, "best.pth.tar")
-    model.load_state_dict(torch.load(filepath_best, map_location='cpu')["model"])
+    model.load_state_dict(torch.load(args.ckpt_dir, map_location='cpu')["model"])
+    print(f"Loaded model from {args.ckpt_dir}")
     model.to(device)
     logits, gts = [], []
     model.eval()
@@ -179,10 +179,11 @@ def main(args):
             logits.append(logit)
             gts.append(gt)
 
-        if args.dataset == "risk":
-            test_risk(logits, gts)
+        # if args.dataset == "risk":
+        #     test_risk(logits, gts)
         logits = torch.cat(logits, 0).squeeze().cpu().numpy()
         gts = torch.cat(gts, 0).squeeze().cpu().numpy()
+        print(f"test results: logits {logits}, gts {gts}")
         np.savez(os.path.join(args.output_dir, f"{args.file_name}.npz"), logits = logits, gts=gts)
 
 if __name__ == "__main__":

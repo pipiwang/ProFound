@@ -1,5 +1,6 @@
 *.DS_Store
 ckpt/
+checkpoint/
 dump/
 MinkowskiEngine/
 output_*/
@@ -8,3 +9,4 @@ surface-distance/
 *.pyc
 __pycache__/
 visualize_results/
+demo/
