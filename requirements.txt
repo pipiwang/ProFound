@@ -1,0 +1,9 @@
+numpy
+scikit-learn
+nibabel
+SimpleITK
+timm
+pandas
+scipy
+prettytable
+monai
