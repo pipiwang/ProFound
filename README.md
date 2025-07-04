@@ -25,16 +25,18 @@ git checkout demo
 ```
 
 - Download weights and example images [here](https://liveuclac-my.sharepoint.com/:f:/g/personal/rmapyw0_ucl_ac_uk/ElyR-Bc7QqVAjhShIptm9K8BJsSb6QKKqJn0XolSEj0vgQ?e=MsrMCf).
-- Decompress (if needed) and place the downloaded folders, `checkpoints` and `demo`, at the repository root directory and run the following tasks.
 
-### Dependencies
-- Install PyTorch version specified in `requirements-pytorch.txt`.
+- Decompress (if needed) and place the downloaded folders, `checkpoints` and `demo`, at the repository root directory.
 
-- Install base dependencies:
-
+- Configure dependencies.
+  - Install PyTorch version specified in `requirements-pytorch.txt`.
+  - Install MONAI and other packages:
    ```bash
    pip install -r requirements.txt
    ```
+
+- Run the following tasks:
+
 
 ### Radiological cancer classification
 - **Run**:
@@ -68,7 +70,7 @@ git checkout demo
 ## 🥚 Pre-trained Models
 
 ### Available models
-- **ProFound-alpha**: [Download pre-trained weights](https://your-download-link-here.com)
+- **ProFound-alpha**: [Download pre-trained weights](https://liveuclac-my.sharepoint.com/:f:/g/personal/rmapyhu_ucl_ac_uk/Et-apmeR2JRMsWRPV0VbQ40BZETdEUmWeq40ulwucYoW-A?e=T6y7F0)
 > Pre-trained on approximately 5,000 international, cross-institute, multiparametric prostate MRI studies, each of which includes T2w, ADC and high-b DWI volumes
 
 *More models coming soon!*
