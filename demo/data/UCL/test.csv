@@ -1,0 +1,3 @@
+t2w,dwi,adc,prostate,lesion
+demo/data/UCL/Patient003782816/study_0/t2-0/image.nii.gz,demo/data/UCL/Patient003782816/study_0/t2-0/dwi2k-0.nii.gz,demo/data/UCL/Patient003782816/study_0/t2-0/adc-0.nii.gz,demo/data/UCL/Patient003782816/study_0/t2-0/prostate_mask.nii.gz,demo/data/UCL/Patient003782816/study_0/t2-0/lesion_mask.nii.gz
+demo/data/UCL/Patient011391141/study_0/t2-0/image.nii.gz,demo/data/UCL/Patient011391141/study_0/t2-0/dwi1k-0.nii.gz,demo/data/UCL/Patient011391141/study_0/t2-0/adc-0.nii.gz,demo/data/UCL/Patient011391141/study_0/t2-0/prostate_mask.nii.gz,demo/data/UCL/Patient011391141/study_0/t2-0/lesion_mask.nii.gz
