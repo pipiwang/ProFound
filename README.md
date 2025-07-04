@@ -25,6 +25,15 @@ git checkout demo
 - Download weights and example images [here](https://liveuclac-my.sharepoint.com/:f:/g/personal/rmapyw0_ucl_ac_uk/ElyR-Bc7QqVAjhShIptm9K8BJsSb6QKKqJn0XolSEj0vgQ?e=MsrMCf).
 - Save them to the repository root directory and run the following tasks.
 
+### Dependencies
+
+- Install base dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+- Install PyTorch version specified in `requirements-pytorch.txt`.
+
 ### Radiological cancer classification
 - **Run**:
   ```bash
