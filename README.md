@@ -5,7 +5,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.11-3776AB.svg?style=flat&logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white" alt="PyTorch"/>
-  <img src="https://img.shields.io/badge/MONAI-005BBB?style=flat&logo=monai&logoColor=white" alt="MONAI"/>
   <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0"/>
 </p>
 
@@ -25,6 +24,15 @@ git checkout demo
 
 - Download weights and example images [here](https://liveuclac-my.sharepoint.com/:f:/g/personal/rmapyw0_ucl_ac_uk/ElyR-Bc7QqVAjhShIptm9K8BJsSb6QKKqJn0XolSEj0vgQ?e=MsrMCf).
 - Decompress (if needed) and place the downloaded folders, `checkpoints` and `demo`, at the repository root directory and run the following tasks.
+
+### Dependencies
+
+- Install base dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+- Install PyTorch version specified in `requirements-pytorch.txt`.
 
 ### Radiological cancer classification
 - **Run**:
