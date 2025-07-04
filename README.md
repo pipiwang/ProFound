@@ -3,8 +3,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-3776AB.svg?style=flat&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white" alt="PyTorch"/>
+  <img src="https://img.shields.io/badge/Python-3.10-3776AB.svg?style=flat&logo=python&logoColor=white" alt="Python 3.10"/>
+  <img src="https://img.shields.io/badge/PyTorch-2.6-EE4C2C?style=flat&logo=pytorch&logoColor=white" alt="PyTorch 2.6"/>
+  <img src="https://img.shields.io/badge/MONAI-1.5-005BBB?style=flat&logo=monai&logoColor=white" alt="MONAI 1.5"/>
+  <img src="https://img.shields.io/badge/CUDA-11.8-76B900?style=flat&logo=nvidia&logoColor=white" alt="CUDA 11.8"/>
   <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0"/>
 </p>
 
@@ -26,13 +28,13 @@ git checkout demo
 - Decompress (if needed) and place the downloaded folders, `checkpoints` and `demo`, at the repository root directory and run the following tasks.
 
 ### Dependencies
+- Install PyTorch version specified in `requirements-pytorch.txt`.
 
 - Install base dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
-- Install PyTorch version specified in `requirements-pytorch.txt`.
 
 ### Radiological cancer classification
 - **Run**:
