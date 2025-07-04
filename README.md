@@ -38,6 +38,15 @@ git checkout demo
 - Run the following tasks:
 
 
+### Dependencies
+
+- Install base dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+- Install PyTorch version specified in `requirements-pytorch.txt`.
+
 ### Radiological cancer classification
 - **Run**:
   ```bash
