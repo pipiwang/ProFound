@@ -11,7 +11,7 @@
 
 
 # ProFound: Vision Foundation Models for Prostate Multiparametric MR Images
-ProFound is a suite of vision foundation models, pre-trained on multiparametric 3D magnetic resonance (MR) images from thousands of prostate cancer patients. 
+ProFound is a suite of vision foundation models, pre-trained on multiparametric 3D magnetic resonance (MR) images from large collections of prostate cancer patients. 
 
 We aim to open-source all code for pre-training, fine-tuning, and evaluation, together with weights of pre-trained and fine-tuned ProFound models. This is an ongoing effort, so please check back later for updates.
 
@@ -23,7 +23,7 @@ git checkout demo
 ```
 
 - Download weights and example images [here](https://liveuclac-my.sharepoint.com/:f:/g/personal/rmapyw0_ucl_ac_uk/ElyR-Bc7QqVAjhShIptm9K8BJsSb6QKKqJn0XolSEj0vgQ?e=MsrMCf).
-- Save them to the repository root directory and run the following tasks.
+- Decompress (if needed) and place the downloaded folders, `checkpoints` and `demo`, at the repository root directory and run the following tasks.
 
 ### Dependencies
 
@@ -37,7 +37,7 @@ git checkout demo
 ### Radiological cancer classification
 - **Run**:
   ```bash
-  python demo_run_classification.py
+  sh demo_run_classification.sh
   ```
 <!-- - **Example output:**  
   ![Cancer segmentation example](./assets/cancer_segmentation_example.png) -->
@@ -45,7 +45,7 @@ git checkout demo
 ### Lesion segmentation
 - **Run**:
   ```bash
-  python demo_run_segmentation.py
+  sh demo_run_segmentation.sh
   ```
 <!-- - **Example output:**  
   ![Gland segmentation example](./assets/anatomy_segmentation_example.png) -->
