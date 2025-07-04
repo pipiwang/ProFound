@@ -187,7 +187,7 @@ def main(args):
     args.output_dir = os.path.join(args.output_dir, args.dataset)
     os.makedirs(args.output_dir, exist_ok=True)
 
-    model.load_state_dict(torch.load(args.ckpt_dir)["model"])
+    model.load_state_dict(torch.load(args.ckpt_dir, weights_only=False)["model"])
     print(f"Loaded model: {args.ckpt_dir}")
 
     dice_list = []

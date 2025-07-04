@@ -120,7 +120,7 @@ def validation(model, data_loader_val, device, epoch, args):
 
 def test(model, test_loader, args):
     filepath_best = os.path.join(args.output_dir, "best.pth.tar")
-    model.load_state_dict(torch.load(filepath_best)["model"])
+    model.load_state_dict(torch.load(filepath_best)["model"], weights_only=False)
 
     model.eval()
     log_stats = {}

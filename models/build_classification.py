@@ -14,7 +14,7 @@ def build_model(args, device):
             raise FileExistsError(f"{args.pretrain} Not exists")
         ckpt = torch.load(args.pretrain, map_location="cpu")
         ckpt = remap_checkpoint_keys(ckpt)
-        load_state_dict(convnext, ckpt)
+        load_state_dict(convnext, ckpt, weights_only=False)
         model = Classifier(convnext, args.num_classes)
         model = model.to(device)
         if args.train == "freeze":

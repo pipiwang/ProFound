@@ -167,7 +167,7 @@ def main(args):
     args.output_dir = os.path.join(args.output_dir, args.dataset)
     os.makedirs(args.output_dir, exist_ok=True)
 
-    model.load_state_dict(torch.load(args.ckpt_dir, map_location='cpu')["model"])
+    model.load_state_dict(torch.load(args.ckpt_dir, map_location='cpu', weights_only=False)["model"])
     print(f"Loaded model from {args.ckpt_dir}")
     model.to(device)
     logits, gts = [], []

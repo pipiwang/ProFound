@@ -416,21 +416,21 @@ def load_model(args, model_without_ddp, optimizer, loss_scaler):
     if args.resume:
         if args.resume.startswith("https"):
             checkpoint = torch.hub.load_state_dict_from_url(
-                args.resume, map_location="cpu", check_hash=True
+                args.resume, map_location="cpu", check_hash=True, weights_only=False
             )
         else:
             checkpoint = torch.load(args.resume, map_location="cpu")
-        model_without_ddp.load_state_dict(checkpoint["model"])
+        model_without_ddp.load_state_dict(checkpoint["model"], weights_only=False)
         print("Resume checkpoint %s" % args.resume)
         if (
             "optimizer" in checkpoint
             and "epoch" in checkpoint
             and not (hasattr(args, "eval") and args.eval)
         ):
-            optimizer.load_state_dict(checkpoint["optimizer"])
+            optimizer.load_state_dict(checkpoint["optimizer"], weights_only=False)
             args.start_epoch = checkpoint["epoch"] + 1
             if "scaler" in checkpoint:
-                loss_scaler.load_state_dict(checkpoint["scaler"])
+                loss_scaler.load_state_dict(checkpoint["scaler"], weights_only=False)
             print("With optim & sched!")
 
 
