@@ -10,3 +10,4 @@ surface-distance/
 __pycache__/
 visualize_results/
 .vscode/
+demo/
