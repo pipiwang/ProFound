@@ -49,10 +49,16 @@ git checkout demo
 ### Lesion segmentation
 - **Run**:
   ```bash
-  sh demo_run_segmentation.sh
+  sh demo_run_lesion_segmentation.sh
   ```
 <!-- - **Example output:**  
   ![Gland segmentation example](./assets/anatomy_segmentation_example.png) -->
+
+### Anatomy segmentation
+- **Run**:
+  ```bash
+  sh demo_run_anatomy_segmentation.sh
+  ```
 
 <!-- ### Cancer localisation
 - **Download weights**: [fine-tuned weights](https://your-download-link-here.com)
