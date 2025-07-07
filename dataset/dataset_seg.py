@@ -412,38 +412,53 @@ def build_Anatomy_loader(args):
 
 def build_BpAnatomy_loader(args):
     train_transforms, val_transforms, test_transforms = get_transforms(args)
-    if args.data20:
-        train_set = BpAnatomySet(args, "spilt/anatomy/train_20.csv", 'train', train_transforms)
+    if args.demo:
+        test_set = BpAnatomySet(
+            args,
+            "demo/data/anatomy/test.csv",
+            'test',
+            NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
+        )
+        test_loader = DataLoader(
+            test_set, batch_size=1, shuffle=False, num_workers=4, drop_last=False
+        )
+        args.in_channels = 3
+        args.out_channels = 9
+        args.num_classes = 8
+        return test_loader
     else:
-        train_set = BpAnatomySet(args, "spilt/anatomy/train.csv", 'train', train_transforms)
-    val_set = BpAnatomySet(args, "spilt/anatomy/val.csv", 'val', val_transforms)
-    test_set = BpAnatomySet(
-        args,
-        "spilt/anatomy/test.csv",
-        'test',
-        NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
-    )
-    train_loader = DataLoader(
-        train_set,
-        batch_size=args.batch_size,
-        shuffle=True,
-        num_workers=4,
-        drop_last=False,
-    )
-    val_loader = DataLoader(
-        val_set,
-        batch_size=args.batch_size,
-        shuffle=False,
-        num_workers=4,
-        drop_last=False,
-    )
-    test_loader = DataLoader(
-        test_set, batch_size=1, shuffle=False, num_workers=4, drop_last=False
-    )
-    args.in_channels = 3
-    args.out_channels = 9
-    args.num_classes = 8
-    return train_loader, val_loader, test_loader
+        if args.data20:
+            train_set = BpAnatomySet(args, "spilt/anatomy/train_20.csv", 'train', train_transforms)
+        else:
+            train_set = BpAnatomySet(args, "spilt/anatomy/train.csv", 'train', train_transforms)
+        val_set = BpAnatomySet(args, "spilt/anatomy/val.csv", 'val', val_transforms)
+        test_set = BpAnatomySet(
+            args,
+            "spilt/anatomy/test.csv",
+            'test',
+            NormalizeIntensityd(keys="image", nonzero=True, channel_wise=True),
+        )
+        train_loader = DataLoader(
+            train_set,
+            batch_size=args.batch_size,
+            shuffle=True,
+            num_workers=4,
+            drop_last=False,
+        )
+        val_loader = DataLoader(
+            val_set,
+            batch_size=args.batch_size,
+            shuffle=False,
+            num_workers=4,
+            drop_last=False,
+        )
+        test_loader = DataLoader(
+            test_set, batch_size=1, shuffle=False, num_workers=4, drop_last=False
+        )
+        args.in_channels = 3
+        args.out_channels = 9
+        args.num_classes = 8
+        return train_loader, val_loader, test_loader
 
 
 def build_PromisHist_loader(args):

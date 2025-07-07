@@ -158,7 +158,9 @@ def main(args):
     if args.dataset == "UCL":
         data_loader_test = build_UCL_loader(args)
         args.sliding_window = False
-    
+    elif args.dataset == "anatomy":
+        data_loader_test =build_BpAnatomy_loader(args)
+        args.sliding_window = False
     else:
         raise NotImplementedError(f"unknown schedule sampler: {args.dataset}")
     print(f"Loaded dataset: {args.dataset}, test set size: {len(data_loader_test)}")
@@ -209,11 +211,11 @@ def main(args):
                 pred = torch.softmax(pred, dim=1)
                 pred = torch.argmax(pred, dim=1, keepdim=True)
 
-            dice = compute_dice(pred, gt)  # compute_dice(pred, gt, False,num_classes=9)
+            dice = compute_dice(pred, gt)  # compute_dice(pred, gt, False,num_classes=8)
             print(pid, dice.item())
             if not torch.isnan(dice):
                 dice_list.append(dice)
-            # dice = int(dice.mean()*10000)
+                
             img = img.squeeze().cpu().numpy()
             pred = pred.squeeze().cpu().numpy()
             gt = gt.squeeze().cpu().numpy()
