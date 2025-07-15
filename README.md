@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/MONAI-1.5-005BBB?style=flat&logo=monai&logoColor=white" alt="MONAI 1.5"/>
   <img src="https://img.shields.io/badge/CUDA-11.8-76B900?style=flat&logo=nvidia&logoColor=white" alt="CUDA 11.8"/>
   <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0"/>
+  <img src="https://img.shields.io/badge/HuggingFace-Demo-orange?logo=huggingface&logoColor=white" alt="Hugging Face Demo"/>
 </p>
 
 
@@ -16,6 +17,11 @@
 ProFound is a suite of vision foundation models, pre-trained on multiparametric 3D magnetic resonance (MR) images from large collections of prostate cancer patients. 
 
 We aim to open-source all code for pre-training, fine-tuning, and evaluation, together with weights of pre-trained and fine-tuned ProFound models. This is an ongoing effort, so please check back later for updates.
+
+
+## 🤗 Try ProFound Online
+
+Interact with ProFound directly in your browser via [our Hugging Face Space](https://huggingface.co/spaces/wxyi088/ProFound).
 
 
 ## 🐣 Downstream Clinical Tasks
