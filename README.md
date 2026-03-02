@@ -95,11 +95,11 @@ Open an issue for questions and feedback.
 
 
 
-## 🌞 Acknowledgement
-This work is supported by the International Alliance for Cancer Early Detection, an alliance between Cancer Research UK, Canary Center at Stanford University, the University of Cambridge, OHSU Knight Cancer Institute, University College London and the University of Manchester.
+[//]: < ## 🌞 Acknowledgement>
+[//]: <This work is supported by the International Alliance for Cancer Early Detection, an alliance between Cancer Research UK, Canary Center at Stanford University, the University of Cambridge, OHSU Knight Cancer Institute, University College London and the University of Manchester.>
 
-This work is also supported by the National Institute for Health Research University College London Hospitals Biomedical Research Centre.
+[//]: <This work is also supported by the National Institute for Health Research University College London Hospitals Biomedical Research Centre.>
 
-The authors acknowledge the use of resources provided by the Isambard-AI National AI Research Resource (AIRR). Isambard-AI is operated by the University of Bristol and is funded by the UK Government’s Department for Science, Innovation and Technology (DSIT) via UK Research and Innovation; and the Science and Technology Facilities Council [ST/AIRR/I-A-I/1023].
+[//]: <The authors acknowledge the use of resources provided by the Isambard-AI National AI Research Resource (AIRR). Isambard-AI is operated by the University of Bristol and is funded by the UK Government’s Department for Science, Innovation and Technology (DSIT) via UK Research and Innovation; and the Science and Technology Facilities Council [ST/AIRR/I-A-I/1023].>
 
 ---
